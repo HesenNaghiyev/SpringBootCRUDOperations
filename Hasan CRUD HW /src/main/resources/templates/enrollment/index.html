@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Index Page For Enrollment</title>
+</head>
+<body>
+<br>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="w-50 border ">
+
+            <table>
+                <tr>
+                    <th>Student Id</th>
+                    <th>Firstname</th>
+                    <th>LastName</th>
+                    <th>Country</th>
+                    <th>Gpa</th>
+                </tr>
+                <tr th:each="student: ${students}">
+                    <td th:text="${student.id}">0</td>
+                    <td th:text="${student.firstname}">0</td>
+                    <td th:text="${student.lastname}">0</td>
+                    <td th:text="${student.country}">0</td>
+                    <td th:text="${student.gpa}">0</td>
+                    <td>
+                        <a  th:href="@{/enrollment/{courses}(id=${student.id})}"><button class="btn btn-sm btn-success"> View Courses</button></a>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <a class="btn btn-sm btn-success" href="/course/"> Go to Course Index page</a>
+            <a class="btn btn-sm btn-success" href="/student/"> Go to Student Index page</a>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

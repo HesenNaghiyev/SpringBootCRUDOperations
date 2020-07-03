@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Time To delete Student</title>
+</head>
+<body>
+</form>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="w-50 border border-primary m-4 p-5">
+            <h1>Enter Course Credentials to delete course</h1>
+            <form action="#" th:action="@{/course/delete}" th:object="${course}" method="post">
+                Enter The Course Id: <br> <input required type="text" th:field="*{CourseID}"><br>
+                Enter The Course Name: <br>  <br>  <input required type="text" th:field="*{Coursename}"><br>
+                Enter The Course Level: <br>  <input required type="text" th:field="*{Courselevel}"><br>
+                Tell that does The Course have prerequisite: <br>   <input required type="text" th:field="*{prerequisite}"><br>
+
+                <input class="btn btn-success btn-sm" type="submit" value="Delete it">
+                <span style="color:red" th:text="${notAllowed}"></span>
+                <br>
+                <a  class="btn btn-success btn-sm" href="/course/">Go to Course Index Page</a>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

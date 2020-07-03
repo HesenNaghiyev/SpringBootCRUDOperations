@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>CRUD  Operations of Courses</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="w-50">
+            <h1>Courses' CRUD  Operations </h1>
+            <br>
+            <a class="btn btn-warning btn-sm mt-2" href="/course/list"> Click Here to see Course List</a>
+
+            <br>
+            <form action="/course/id" method="GET">
+                Find Course by Id <br>  <input required class="form-control" type="text" name="id">
+                <p style="color:red"  th:text="${message1}"></p>
+                <input type="submit" class="btn btn-warning btn-sm mt-2" value="FindById">
+            </form>
+
+            <br>
+            <form action="/course/godelete" method="GET">
+                Delete Course by Id<br> <input required type="text" name="id">
+                <p style="color:red"  th:text="${message2}"></p>
+                <input type="submit" class="btn btn-warning btn-sm mt-2" value="Delete">
+            </form>
+            <br>
+            <a class="btn btn-sm btn-success" href="/course/new">Add a New Course</a>
+
+            <br>
+            <form action="/course/goupdate" method="GET">
+                Update Course by Id <br>  <input required type="text" name="id">
+                <p style="color:red"  th:text="${message3}"></p>
+                <input type="submit" class="btn btn-warning btn-sm mt-2" value="Update">
+            </form>
+     <br>
+            <form action="/course/courselevel" method="get">
+                <button class="btn btn-warning btn-sm mt-2"  type="submit"> Get course  Which is Hard</button>
+            </form>
+            <br>
+            <form action="/course/prerequisite" method="get">
+                <button class="btn btn-warning btn-sm mt-2"  type="submit"> Get course  Which has Prerequisite</button>
+            </form>
+
+            <br>
+            <a class="btn btn-warning btn-sm mt-2" href="/student/"> Go to Student Index page</a><br>
+            <a class="btn btn-warning btn-sm mt-2" href="/enrollment/"> Go to Enrollment Index page</a>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

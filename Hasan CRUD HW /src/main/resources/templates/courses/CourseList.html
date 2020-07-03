@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="w-50">
+            <table class="table table-striped">
+                <tr>
+                    <th>Course Id</th>
+                    <th>Course name</th>
+                    <th>Course Level</th>
+                    <th>Course prerequisite</th>
+                </tr>
+                <tr th:each="course: ${courses}">
+                    <td th:text="${course.CourseID}">0</td>
+                    <td th:text="${course.Coursename}">0</td>
+                    <td th:text="${course.Courselevel}">0</td>
+                    <td th:text="${course.prerequisite}">0</td>
+                </tr>
+            </table>
+            <br>
+            <a class="btn btn-sm btn-success" href="/course/"> Go to Index Page</a>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
